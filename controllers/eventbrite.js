@@ -11,12 +11,13 @@ module.exports = (req, res) => {
         }
     }, (error, response, body) => {
         if (!error && response.statusCode === 200) {
-            res.json(body);
+            res.send(body);
         } else if (response.statusCode === 401) {
             console.error("Eventbrite: Invalid Token");
         }
         if (error) {
             console.error(error);
         }
+        res.status(500);
     });
 };
