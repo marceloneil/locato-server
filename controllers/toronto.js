@@ -26,7 +26,7 @@ let createEvent = (item) => {
                 cost = parseFloat(calEvent.cost.adult)
             }
             if (calEvent.image) {
-                photo = 'https://app.toronto.ca' + calEvent.image.url
+                photo = 'http://app.toronto.ca' + calEvent.image.url
             }
             Event.create({
                 name: calEvent.eventName,
