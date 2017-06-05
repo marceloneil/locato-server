@@ -1,8 +1,20 @@
-const app = require('express')();
+const app = require('express')()
+const db = require('mongoose')
 
-app.get('/eventbrite', require("./controllers/eventbrite"));
+// Controllers
+const eventbriteController = require('./controllers/eventbrite')
+const torontoController = require('./controllers/toronto')
 
-app.listen(3000, () => {
-    console.log('locaTO server listening on port 3000!')
-});
+// Database
+db.connect('db')
+torontoController.update()
+setInterval(() => {
+    torontoController.update()
+}, 24 * 60 * 60 * 1000)
 
+// Endpoints
+app.get('/eventbrite/events', eventbriteController.events)
+app.get('/eventbrite/venues/:venue', eventbriteController.venues)
+app.get('/toronto', torontoController.events)
+
+app.listen(3001)

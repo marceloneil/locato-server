@@ -19,6 +19,7 @@
   "homepage": "https://github.com/marceloneil/locato-server#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "mongoose": "^4.10.4",
     "request": "^2.81.0"
   }
 }

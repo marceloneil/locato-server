@@ -1,9 +1,10 @@
 FROM node:alpine
 MAINTAINER Marcel O'Neil <marcel@marceloneil.com>
 
-ADD . /usr/src/locato-server
 WORKDIR /usr/src/locato-server
+ADD package.json .
 RUN npm install
+ADD . .
 
-EXPOSE 3000
+EXPOSE 3001
 CMD ["npm", "start"]
