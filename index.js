@@ -9,7 +9,7 @@ const torontoController = require('./controllers/toronto')
 db.connect('db')
 torontoController.update()
 setInterval(() => {
-    torontoController.update()
+  torontoController.update()
 }, 24 * 60 * 60 * 1000)
 
 // Endpoints

@@ -1,15 +1,14 @@
 const db = require('mongoose')
 
 const eventSchema = new db.Schema({
-    name: String,
-    description: String,
-    location: String,
-    time: Date,
-    keywords: [String],
-    categories: [String],
-    cost: Number,
-    url: String,
-    photo: String
+  name: String,
+  description: String,
+  location: String,
+  time: Date,
+  categories: [String],
+  cost: Number,
+  url: String,
+  photo: String
 })
 
 const Event = db.model('Event', eventSchema)
